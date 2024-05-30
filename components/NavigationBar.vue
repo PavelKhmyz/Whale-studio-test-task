@@ -3,30 +3,28 @@ import { store } from '~/lib';
 </script>
 
 <template>
-  <Transition name="navigation" mode="out-in">
-    <nav class="navigationWrapper" v-if="store.navigationIsShown">
-      <NavigationLink
-          href="/"
-          title="About us"
-      />
-      <NavigationLink
-          href="/"
-          title="Architecture"
-      />
-      <NavigationLink
-          href="/"
-          title="Interior"
-      />
-      <NavigationLink
-          href="/"
-          title="Contact"
-      />
-      <NavigationLink
-          href="/"
-          title="Shop"
-      />
-    </nav>
-  </Transition>
+  <nav :class="store.navigationIsShown ? 'navigationWrapper' : 'navigationWrapperCollapse'">
+    <NavigationLink
+        href="/"
+        title="About us"
+    />
+    <NavigationLink
+        href="/"
+        title="Architecture"
+    />
+    <NavigationLink
+        href="/"
+        title="Interior"
+    />
+    <NavigationLink
+        href="/"
+        title="Contact"
+    />
+    <NavigationLink
+        href="/"
+        title="Shop"
+    />
+  </nav>
 </template>
 
 <style scoped>
@@ -36,6 +34,16 @@ import { store } from '~/lib';
   gap: 40px;
   overflow: hidden;
   width: 470px;
+  transition: width 1s ease;
+}
+
+.navigationWrapperCollapse {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  overflow: hidden;
+  width: 0;
+  transition: width 2s ease;
 }
 
 a {
