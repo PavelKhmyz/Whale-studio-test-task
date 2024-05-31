@@ -19,12 +19,13 @@ const language = ref<string>('eng')
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-right: 20px;
 
   &::before {
     content: '';
     display: block;
     height: 19px;
-    margin-right: 40px;
+    //margin-right: 40px;
     border-right: 1px solid rgba(0, 0, 0, 0.2);
   }
 }
@@ -51,6 +52,15 @@ label {
 
   &:first-of-type {
     margin-right: 14px;
+    margin-left: 40px;
+
+    @media (max-width: 800px) {
+      margin-left: 20px;
+    }
+
+    @media (max-width: 400px) {
+      margin-left: 0;
+    }
   }
 }
 </style>

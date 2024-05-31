@@ -27,9 +27,30 @@ import { store } from '~/lib';
     display: flex;
     gap: 35px;
     width: 100%;
+    height: var(--footer-height);
   }
 
   .footerLink {
     font-weight: 600;
+    color: #333333;
+    position: relative;
+    transition: all 1s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #333333;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
   }
 </style>

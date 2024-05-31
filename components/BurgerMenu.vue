@@ -16,7 +16,7 @@ const handleCloseModal = () => {
   </button>
 
   <button class="burgerMenu" @click="handleCloseModal" v-if="store.modalOpen">
-    Close
+    <span>Close</span>
     <img src="/close.svg" class="closeButton" alt="Close Button">
   </button>
 </template>
@@ -24,6 +24,7 @@ const handleCloseModal = () => {
 <style scoped>
 .burgerMenu {
   border: none;
+  padding: 0;
   background-color: transparent;
   display: flex;
   align-items: center;
@@ -32,9 +33,19 @@ const handleCloseModal = () => {
   font-size: 16px;
   font-weight: 600;
 
+  @media (max-width: 420px) {
+    span {
+      display: none;
+    }
+  }
+
   .closeButton {
     width: 20px;
     margin-left: 14px;
+
+    @media (max-width: 420px) {
+      margin-left: 0;
+    }
   }
 }
 </style>

@@ -24,7 +24,7 @@ import { store } from '~/lib'
 
       </div>
     </div>
-
+    <MobileSearch />
     <ModalNavigation />
 
   </header>
@@ -37,7 +37,7 @@ import { store } from '~/lib'
 
   .container {
     display: flex;
-    height: 50px;
+    height: var(--header-height);
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -47,6 +47,10 @@ import { store } from '~/lib'
     display: flex;
     flex-direction: row;
     gap: 40px;
+
+    @media (max-width: 800px) {
+      gap: 20px
+    }
 
     .logo {
       font-family: 'Playfair Display', serif;
@@ -60,6 +64,10 @@ import { store } from '~/lib'
     display: flex;
     flex-direction: row;
     gap: 40px;
+
+    @media (max-width: 800px) {
+      gap: 20px
+    }
 
     .fadeWrapper {
       display: flex;

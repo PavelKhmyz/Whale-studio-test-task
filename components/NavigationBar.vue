@@ -35,6 +35,15 @@ import { store } from '~/lib';
   overflow: hidden;
   width: 470px;
   transition: width 1s ease;
+
+  @media(max-width: 1100px) {
+    gap: 10px;
+    width: 330px;
+  }
+
+  @media(max-width: 915px) {
+    width: 0;
+  }
 }
 
 .navigationWrapperCollapse {
@@ -44,6 +53,10 @@ import { store } from '~/lib';
   overflow: hidden;
   width: 0;
   transition: width 2s ease;
+
+  @media(max-width: 1100px) {
+    gap: 10px;
+  }
 }
 
 a {

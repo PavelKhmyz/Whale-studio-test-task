@@ -33,14 +33,11 @@ const handleCloseSearch = () => {
   background-color: white;
   padding: 15px 0;
 
-  &::before {
-    content: '';
-    display: block;
-    height: 19px;
-    border-right: 1px solid rgba(0, 0, 0, 0.2);
+  @media (max-width: 740px) {
+    display: none;
   }
 
-  &::after {
+  &::before, &::after {
     content: '';
     display: block;
     height: 19px;
@@ -58,12 +55,30 @@ const handleCloseSearch = () => {
     padding: 0;
     width: 0;
     transition: all 1s ease;
+
+    @media (max-width: 915px) {
+      width: 270px;
+    }
   }
 
   .searchInput {
     border: none;
     width: 524px;
     transition: all 2s ease;
+
+    @media (max-width: 1170px) {
+      width: 400px;
+    }
+
+    @media (max-width: 1040px) {
+      width: 270px;
+    }
+  }
+
+  .closeLogo {
+    @media (max-width: 915px) {
+      display: none;
+    }
   }
 
   .searchClose-leave-active,

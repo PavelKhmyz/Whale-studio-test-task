@@ -45,6 +45,28 @@ a {
   }
 }
 
+:root {
+  --padding-top: 20px;
+  --padding-horizontal: 120px;
+  --padding-bottom: 61px;
+  --header-height: 50px;
+  --footer-height: 19px;
+
+  @media(max-width: 1250px) {
+    --padding-horizontal: 80px;
+  }
+
+  @media(max-width: 860px) {
+    --padding-horizontal: 50px;
+    --padding-bottom: 40px;
+  }
+
+  @media(max-width: 400px) {
+    --padding-horizontal: 20px;
+    --padding-bottom: 20px;
+  }
+}
+
 #app {
   max-width: 1440px;
   width: 100%;
@@ -52,5 +74,5 @@ a {
   flex-direction: column;
   margin: 0 auto;
   height: 100vh;
-  padding: 20px 120px 61px 120px;
+  padding: var(--padding-top) var(--padding-horizontal) var(--padding-bottom) var(--padding-horizontal);
 }

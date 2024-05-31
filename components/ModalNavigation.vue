@@ -103,7 +103,7 @@ const onMouseLeave = () => {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: calc(100vh - 70px - 61px - 19px);
+    height: calc(100vh - var(--header-height) - var(--padding-top) - var(--padding-bottom) - var(--footer-height));
     overflow: hidden;
     transition: height 0.5s ease;
   }
@@ -115,13 +115,39 @@ const onMouseLeave = () => {
     .rightImage {
       position: absolute;
       top: -120px;
-      right: -310px
+      right: -310px;
+
+      @media (max-width: 1100px) {
+        width: 230px;
+        right: -280px;
+      }
+
+      @media (max-width: 1100px) {
+        right: -220px;
+      }
+
+      @media (max-width: 740px) {
+        display: none;
+      }
     }
 
     .leftImage {
       position: absolute;
       top: -120px;
-      left: -310px
+      left: -310px;
+
+      @media (max-width: 1100px) {
+      width: 230px;
+      left: -280px;
+      }
+
+      @media (max-width: 1100px) {
+        left: -220px;
+      }
+
+      @media (max-width: 740px) {
+        display: none;
+      }
     }
 
     .link {
@@ -132,6 +158,10 @@ const onMouseLeave = () => {
       color: #444444;
       height: 104px;
       position: relative;
+
+      @media (max-width: 1000px) {
+        font-size: 36px;
+      }
     }
   }
 </style>
