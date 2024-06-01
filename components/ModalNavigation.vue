@@ -12,7 +12,7 @@ const onMouseEnter = (event: Event) => {
       if (typedChild.innerText !== typedEventTarget.innerText) {
         typedChild.style.color = 'rgba(68, 68, 68, 0.4)'
       } else {
-        typedChild.style.color = '#444444'
+        typedChild.style.color = '#425A20'
       }
     }
   }
@@ -30,6 +30,9 @@ const onMouseLeave = () => {
 </script>
 
 <template>
+  <Transition name="background">
+    <div class="modalBackground" v-if="store.modalOpen"/>
+  </Transition>
   <div :class="!store.modalOpen ? 'modalWrapperCollapse' : 'modalWrapper'">
     <nav class="modalNavigationWrapper" ref="wrapper">
       <NavigationLink
@@ -82,10 +85,27 @@ const onMouseLeave = () => {
 </template>
 
 <style>
-  #app {
-    background-image: url(/background.png);
+  .modalBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("/background.png");
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: -1;
+    transition: opacity 1s ease;
+  }
+
+  .background-enter-active,
+  .background-leave-active {
+    transition: opacity 1s ease;
+  }
+
+  .background-enter-from,
+  .background-leave-to {
+    opacity: 0;
   }
 
   .modalWrapperCollapse {
@@ -158,6 +178,8 @@ const onMouseLeave = () => {
       color: #444444;
       height: 104px;
       position: relative;
+      top: 0;
+      left: 0;
 
       @media (max-width: 1000px) {
         font-size: 36px;

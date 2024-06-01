@@ -19,6 +19,8 @@ import { store } from '~/lib';
       href="https://www.behance.net/"
       :classNames="{ link: 'footerLink' }"
     />
+
+    <SliderControl v-if="!store.modalOpen"/>
   </footer>
 </template>
 

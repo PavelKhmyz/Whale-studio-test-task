@@ -1,10 +1,17 @@
 <script setup lang="ts">
 import { store } from '~/lib';
+import type { ISlideData } from '~/components/Slide.vue';
+
+const { data } = await useFetch<ISlideData[]>('https://664878da2bb946cf2fa0af05.mockapi.io/api/v1/menu');
+
+if(data.value) {
+  store.totalSlides = data.value.map((slide: ISlideData) => +slide.id)
+}
 </script>
 
 <template>
   <main :class="store.modalOpen ?  'mainWrapperCollapse' : 'mainWrapper'">
-    <h1>Some Content</h1>
+    <Slider v-if="data" :data="data"/>
   </main>
 </template>
 

@@ -21,7 +21,7 @@ import { store } from '~/lib'
     width: 100%;
     height: 51px;
     overflow: hidden;
-    background-color: white;
+    background-color: transparent;
     gap: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     transition: all 0.5s ease;
@@ -41,5 +41,6 @@ import { store } from '~/lib'
   .mobileSearchInput {
     width: 100%;
     border: none;
+    background-color: transparent;
   }
 </style>

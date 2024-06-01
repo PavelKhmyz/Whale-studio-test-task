@@ -30,7 +30,6 @@ const handleCloseSearch = () => {
 .searchBarWrapper {
   display: flex;
   align-items: center;
-  background-color: white;
   padding: 15px 0;
 
   @media (max-width: 740px) {
@@ -54,6 +53,7 @@ const handleCloseSearch = () => {
     border: none;
     padding: 0;
     width: 0;
+    background-color: transparent;
     transition: all 1s ease;
 
     @media (max-width: 915px) {
@@ -64,6 +64,7 @@ const handleCloseSearch = () => {
   .searchInput {
     border: none;
     width: 524px;
+    background-color: transparent;
     transition: all 2s ease;
 
     @media (max-width: 1170px) {

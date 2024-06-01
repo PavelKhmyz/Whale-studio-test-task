@@ -1,6 +1,15 @@
 import { reactive } from 'vue'
 
-export const store = reactive({
+interface IStore {
+  navigationIsShown: boolean,
+  modalOpen: boolean,
+  totalSlides: number[],
+  actualSlide: number,
+}
+
+export const store = reactive<IStore>({
   navigationIsShown: true,
   modalOpen: false,
+  totalSlides: [],
+  actualSlide: 1,
 })
