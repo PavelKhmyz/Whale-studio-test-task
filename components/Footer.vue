@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { store } from '~/lib';
+import NavigationLink from '~/components/common/NavigationLink.vue'
 </script>
 
 <template>
@@ -30,6 +31,16 @@ import { store } from '~/lib';
     gap: 35px;
     width: 100%;
     height: var(--footer-height);
+
+    @media(max-width: 700px) {
+      justify-content: center;
+    }
+
+    div {
+      @media(max-width: 700px) {
+        display: none;
+      }
+    }
   }
 
   .footerLink {

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ReadMoreButton from '~/components/Slider/ReadMoreButton.vue';
+import ProjectLink from '~/components/Slider/ProjectLink.vue';
 import { store } from '~/lib';
 
 interface ICol {
@@ -35,27 +37,29 @@ const handleClick = () => {
   <div :class="String(store.actualSlide) === props.data.id ? 'slideWrapper' : 'slideWrapperCollapse'">
     <h1 class="slideTitle">{{ props.data.title }}</h1>
     <table>
-      <tr>
-        <td class="columnTitle">
-          {{ props.data.description.col1.title }}
-        </td>
-        <td class="columnTitle">
-          {{ props.data.description.col2.title }}
-        </td>
-      </tr>
-      <tr>
-        <td class="columnContent">
-          {{ props.data.description.col1.description }}
-        </td>
-        <td class="columnContent">
-          {{ props.data.description.col2.description }}
-        </td>
-      </tr>
+      <tbody>
+        <tr>
+          <td class="columnTitle">
+            {{ props.data.description.col1.title }}
+          </td>
+          <td class="columnTitle">
+            {{ props.data.description.col2.title }}
+          </td>
+        </tr>
+        <tr>
+          <td class="columnContent">
+            {{ props.data.description.col1.description }}
+          </td>
+          <td class="columnContent">
+            {{ props.data.description.col2.description }}
+          </td>
+        </tr>
+      </tbody>
     </table>
 
     <div class="buttonsWrapper">
       <ReadMoreButton @click="handleClick" />
-      <ProjectLink :href="props.data.link || ''" />
+      <ProjectLink :href="props.data.link || '/'" />
     </div>
   </div>
 </template>
@@ -76,6 +80,18 @@ const handleClick = () => {
     height: 440px;
     overflow: hidden;
     transition: width 1s ease, opacity 0.2s 0.3s ease;
+
+    @media(max-width: 1400px) {
+      transition: opacity 1s ease;
+    }
+
+    @media(max-width: 810px) {
+      height: 500px;
+    }
+
+    @media(max-width: 350px) {
+      height: 530px;
+    }
   }
 
   .slideWrapperCollapse {
@@ -84,6 +100,18 @@ const handleClick = () => {
     height: 440px;
     overflow: hidden;
     transition: width 1s ease, opacity 0.2s ease;
+
+    @media(max-width: 1400px) {
+      transition: opacity 0.5s 0.5s ease;
+    }
+
+    @media(max-width: 810px) {
+      height: 500px;
+    }
+
+    @media(max-width: 350px) {
+      height: 530px;
+    }
   }
 
   .backgroundWrapper {
@@ -101,6 +129,15 @@ const handleClick = () => {
     font-family: "Playfair Display", serif;
     font-size: 96px;
     color: #425A20;
+
+    @media(max-width: 570px) {
+      font-size: 70px;
+      margin: 25px 0;
+    }
+
+    @media(max-width: 430px) {
+      font-size: 50px;
+    }
   }
 
   table {
@@ -113,6 +150,10 @@ const handleClick = () => {
     font-weight: 600;
     width: 343px;
     padding-right: 58px;
+
+    @media(max-width: 570px) {
+      padding-right: 30px;
+    }
   }
 
   .columnContent {
@@ -122,6 +163,10 @@ const handleClick = () => {
     color: #444444E5;
     padding-top: 10px;
     padding-right: 58px;
+
+    @media(max-width: 570px) {
+      padding-right: 30px;
+    }
 
     div {
       max-height: 75px;
@@ -134,5 +179,14 @@ const handleClick = () => {
     margin-top: 40px;
     gap: 40px;
     align-items: center;
+
+    @media(max-width: 480px) {
+      gap: 20px;
+    }
+
+    @media(max-width: 410px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 </style>

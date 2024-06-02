@@ -10,6 +10,9 @@
   }
 
   const calculateProgressBar = () => {
+    if(!store.totalSlides.length) {
+      return 'width: 0'
+    }
     return `width: ${100 / store.totalSlides.length * store.actualSlide}%`
   }
 </script>
@@ -24,17 +27,19 @@
       <img src="/chevron.svg" alt="chevronPrev" />
     </button>
 
-    <span class="pageViewModel">
-      {{ pagesViewModel(store.actualSlide) }}
-    </span>
+    <ClientOnly>
+      <span class="pageViewModel">
+        {{ pagesViewModel(store.actualSlide) }}
+      </span>
 
-    <div class="progressBar">
-      <div class="progressBarInner" :style="calculateProgressBar()"/>
-    </div>
+      <div class="progressBar">
+        <div class="progressBarInner" :style="calculateProgressBar()"/>
+      </div>
 
-    <span class="pageViewModel">
-      {{ pagesViewModel(store.totalSlides.length) }}
-    </span>
+      <span class="pageViewModel">
+        {{ pagesViewModel(store.totalSlides.length) }}
+      </span>
+    </ClientOnly>
 
     <button
         @click="store.actualSlide++"
@@ -51,6 +56,14 @@
     display: flex;
     margin-left: 140px;
     align-items: center;
+
+    @media (max-width: 1000px) {
+      margin-left: 70px;
+    }
+
+    @media (max-width: 930px) {
+      margin-left: 0;
+    }
   }
 
   .slideButton {
@@ -63,7 +76,14 @@
     justify-content: center;
     align-items: center;
     padding: 0;
-    margin: 0 20px;
+
+    &:first-of-type {
+      margin-right: 20px;
+    }
+
+    &:last-of-type {
+      margin-left: 20px;
+    }
   }
 
   .pageViewModel {
@@ -78,6 +98,14 @@
     background: #425A2061;
     margin: 0 13px;
     position: relative;
+
+    @media (max-width: 800px) {
+      width: 130px;
+    }
+
+    @media (max-width: 700px) {
+      width: 100%;
+    }
 
     .progressBarInner {
       height: 1px;

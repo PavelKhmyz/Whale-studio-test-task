@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import { store } from '~/lib'
+import LanguageToggle from '~/components/common/LanguageToggle.vue'
+import NavigationBar from '~/components/common/NavigationBar.vue'
+import SearchBar from '~/components/common/SearchBar.vue'
+import BurgerMenu from '~/components/common/BurgerMenu.vue'
+import MobileSearch from '~/components/common/MobileSearch.vue'
+import ModalNavigation from '~/components/common/ModalNavigation.vue'
 </script>
 
 <template>

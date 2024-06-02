@@ -3,12 +3,12 @@
 
 @font-face {
   font-family: FuturaBook;
-  src: url(/fonts/FuturaBookC/FuturaBookCRegular.otf);
+  src: url(./fonts/FuturaBookC/FuturaBookCRegular.otf);
 }
 
 @font-face {
   font-family: FuturaDemi;
-  src: url(/fonts/FuturaDemiC/FuturaDemiCRegular.otf);
+  src: url(./fonts/FuturaDemiC/FuturaDemiCRegular.otf);
 }
 
 :focus,

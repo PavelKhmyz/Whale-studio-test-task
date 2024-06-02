@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { store } from '~/lib';
+import NavigationLink from '~/components/common/NavigationLink.vue'
 
 const wrapper = ref<HTMLElement | null>(null);
 

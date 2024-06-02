@@ -25,7 +25,6 @@ const language = ref<string>('eng')
     content: '';
     display: block;
     height: 19px;
-    //margin-right: 40px;
     border-right: 1px solid rgba(0, 0, 0, 0.2);
   }
 }

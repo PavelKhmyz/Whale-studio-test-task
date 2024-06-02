@@ -16,7 +16,31 @@
     position: relative;
     cursor: pointer;
 
-    &:before {
+    @media(max-width: 480px) {
+      width: 150px;
+
+      &::before {
+        width: 150px !important;
+      }
+    }
+
+    @media(max-width: 410px) {
+      width: 200px;
+
+      &::before {
+        width: 200px !important;
+      }
+    }
+
+    &:hover {
+      background-color: #425A20;
+    }
+
+    &:active {
+      background-color: #597D4E;
+    }
+
+    &::before {
       box-sizing: border-box;
       content: "";
       width: 200px;

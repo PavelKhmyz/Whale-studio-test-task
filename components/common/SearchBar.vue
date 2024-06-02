@@ -17,7 +17,7 @@ const handleCloseSearch = () => {
       placeholder="What are you looking for?" />
     <Transition name="searchClose">
       <img src="/close.svg" class="closeLogo" alt="Search logo" @click="handleCloseSearch"
-        v-if="!store.navigationIsShown" />
+           v-if="!store.navigationIsShown" />
     </Transition>
   </div>
 </template>
