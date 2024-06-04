@@ -2,11 +2,12 @@
 import { store } from '~/lib';
 import type { ISlideData } from '~/components/Slider/Slide.vue';
 import Slider from '~/components/Slider/Slider.vue';
+import { sliderApi } from '~/api/slider-api';
 
-const { data } = await useFetch<ISlideData[]>('https://664878da2bb946cf2fa0af05.mockapi.io/api/v1/menu');
+const { data } = await sliderApi.GET<ISlideData[]>();
 
 if(data.value) {
-  store.totalSlides = data.value.map((slide: ISlideData) => +slide.id)
+  store.totalSlides = data.value.map((slide) => +slide.id)
 }
 
 useHead({
